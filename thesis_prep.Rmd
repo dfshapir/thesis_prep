@@ -140,11 +140,11 @@ ggsave("gg.png", width = 12, height = 5)
 ```{r graph_5}
 A <- read_excel("raw-data/Fields.xlsx")
 
-ggplot(A, aes(x = reorder(Category, -Number), y = Number)) +
+ggplot(A, aes(x = reorder(Category, Number), y = Number)) +
          geom_col(fill = "#FF6666") +
   xlab("Area") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(title = "Most Popular Responses")
+  labs(title = "Most Popular Responses") +
+  coord_flip()
 
 ggsave("Fields.png")
   
